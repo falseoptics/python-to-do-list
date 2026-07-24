@@ -1,0 +1,46 @@
+to_do_list = [
+    {"task": "Practice coding for an hour", "Completed": False},
+    {"task": "Clean my room", "Completed": False},
+    {"task": "Do the dishes", "Completed": False},
+    {"task": "Gain 500 Elo on CODM", "Completed": False},
+    {"task": "Get 5k Mastery Points on the LW3 - Tundra", "Completed": False}
+]
+
+
+print("=== Your To-Do List ===")
+for item in to_do_list:
+    status = "✓" if item["Completed"] else "○"
+    print(f"{status} {item['task']}")
+
+print("\n")
+
+for item in to_do_list:
+    if item["task"] == "Gain 500 Elo on CODM":
+        item["Completed"] = True
+
+for item in to_do_list:
+    if item["task"] == "Do the dishes":
+        item["Completed"] = True
+
+
+for item in to_do_list:
+    if item["task"] == "Clean my room":
+        item["Completed"] = True
+
+
+for item in to_do_list:
+    if item["task"] == "Practice Coding for an hour":
+        item["Completed"] = True      
+
+
+
+for item in to_do_list:
+    if item["task"] == "Get 5k Mastery Points on the LW3 - Tundra":
+        item["Completed"] = True
+
+
+    
+print("=== Your To-Do List ===")
+for item in to_do_list:
+    status = "✓" if item["Completed"] else "○"
+    print(f"{status} {item['task']}")
