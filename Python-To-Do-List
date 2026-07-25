@@ -7,40 +7,38 @@ to_do_list = [
 ]
 
 
-print("=== Your To-Do List ===")
-for item in to_do_list:
-    status = "✓" if item["Completed"] else "○"
-    print(f"{status} {item['task']}")
 
-print("\n")
+while True:
+    print("1. View tasks")
+    print("2. Add task")
+    print("3. Mark task complete")
+    print("4. Quit")
+    choice = input("Choose an option: ")
 
-for item in to_do_list:
-    if item["task"] == "Gain 500 Elo on CODM":
-        item["Completed"] = True
+    found = False
 
-for item in to_do_list:
-    if item["task"] == "Do the dishes":
-        item["Completed"] = True
+    if choice == "1":
+        for item in to_do_list:
+           status = "✓" if item["Completed"] else "○"
+           print(f"{status} {item['task']}")
+    elif choice == "2":
+        task_name = input("What task would you like to add? ")
+        new_task = {"task": task_name, "Completed": False}
+        to_do_list.append(new_task)
+        print(f"Task '{task_name}' added to the list.")
+    elif choice == "3":
+        task_name = input("What task did you complete? ")
+        for item in to_do_list:
+            if item["task"] == task_name:
+                item["Completed"] = True
+                found = True
+                break
+        if found:
+            print("Task Found!")
+        else:
+            print("Task not found, try again.")
 
-
-for item in to_do_list:
-    if item["task"] == "Clean my room":
-        item["Completed"] = True
-
-
-for item in to_do_list:
-    if item["task"] == "Practice Coding for an hour":
-        item["Completed"] = True      
-
-
-
-for item in to_do_list:
-    if item["task"] == "Get 5k Mastery Points on the LW3 - Tundra":
-        item["Completed"] = True
-
-
-    
-print("=== Your To-Do List ===")
-for item in to_do_list:
-    status = "✓" if item["Completed"] else "○"
-    print(f"{status} {item['task']}")
+    elif choice == "4":
+        break
+    else:
+        print("Invalid option, try again.")
